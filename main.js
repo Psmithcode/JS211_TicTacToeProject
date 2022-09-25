@@ -70,7 +70,7 @@ const diagonalWin = () => {
 };
 
 const changeMarker = () => {
-  if ((playerTurn = "X")) {
+  if (playerTurn === "X") {
     playerTurn = "O";
   } else {
     playerTurn = "X";
@@ -79,17 +79,16 @@ const changeMarker = () => {
 
 const ticTacToe = (row, column) => {
   // Your code here to place a marker on the board
-  checkForWin();
   board[row][column] = playerTurn;
+  checkForWin();
+  changeMarker();
   // then check for a win
 };
 
 const checkForWin = () => {
   if (horizontalWin() || verticalWin() || diagonalWin()) {
-    return true;
     console.log(`Player ${playerTurn} won!`);
-  } else {
-    changeMarker();
+    return true;
   }
 };
 const getPrompt = () => {

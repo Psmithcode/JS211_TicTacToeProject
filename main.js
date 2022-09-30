@@ -69,6 +69,11 @@ const diagonalWin = () => {
   }
 };
 
+// const handleClick = (element) => {
+//   if (!document.getElementById(element.id).innerHTML) {
+//     addMarker(element.id);
+//   }
+// };
 const changeMarker = () => {
   if (playerTurn === "X") {
     playerTurn = "O";
@@ -78,11 +83,9 @@ const changeMarker = () => {
 };
 
 const ticTacToe = (row, column) => {
-  // Your code here to place a marker on the board
   board[row][column] = playerTurn;
   checkForWin();
   changeMarker();
-  // then check for a win
 };
 
 const checkForWin = () => {
@@ -159,3 +162,11 @@ if (typeof describe === "function") {
 } else {
   getPrompt();
 }
+// let strArray = [];
+// for (let i = 0; i <= str.length; i++) {
+//   if (strArray.includes(str[i])) {
+//     return;
+//   } else {
+//     strArray.push(str.charAt(i));
+//   }
+// }
